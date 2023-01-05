@@ -1,0 +1,44 @@
+\documentclass[]{beamer}
+\usepackage{beamerthemefocus}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usepackage{graphicx}
+% \usepackage{xeCJK}
+\usepackage{xcolor}
+
+\setbeamertemplate{caption}[numbered]
+% \setCJKmainfont{Iansui 094 Regular}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\I}[1]{\mathbbm{1}\left\{#1\right\}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%           Title and author information
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Dynamic Bank Runs: \\ An Agent-based Approach}
+
+\author{Toni Ricardo Eugenio dos Santos \\ [1em]
+Marcio Issao Nakane \\[3em]
+\small presentor: Chia Wei, Chen
+}
+
+
+\begin{document}
+    \begin{frame}
+        \maketitle
+    \end{frame}
+
+    \section{Introduction}
+    \input{section/intro.tex}
+
+    \section{Model}
+    \input{section/model.tex}
+
+    \section{Simulation}
+    \input{section/sim.tex}
+    
+    \section{Extension}
+    \input{section/extension.tex}
+\end{document}

@@ -1,0 +1,70 @@
+\section{Introduction}
+
+\begin{frame}
+    \frametitle{Kiyotaki and Wright 1989}
+
+    \begin{enumerate}[<+->]
+        \item Similar setup as in KW 1989
+        \item Equal number of 3 types, say 1, 2, 3
+        \item Type 1 produce for 2, 2 produce for 3, 3 produce for 1. Type i wants i
+        \item No double coincidence of wants
+        \item Intrinsic property - Cost of holding $s_1 < s_2 < s_3$
+        \item Type i receives utility when consumes good i
+        \item Can only hold one unit of good each period
+        \item Poisson meeting process
+    \end{enumerate}
+
+    \vfill
+    \pause
+    It turned out to have two consistent equilibria
+    \begin{itemize}
+        \item Fundamental equilibrium~: Good 1 as the medium of Exchange
+        \item Speculative equilibrium~: Type 1 also wants good 3
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{AMB approach}
+    This paper explores the \emph{emergence} of such equilibria with agent-based modeling.
+
+    Notations
+    \begin{itemize}
+        \item $a\in \mathscr{A}=\{1,2,...A\}$ : agent
+        \item At time t , $a$ holds good $x_{at}$
+        \item Trade with agent $\rho_t(a)$, 
+        who holds $x_{\rho_t(a)t}$. $z_{at}\equiv(x_{at}, x_{\rho_t(a)t})$
+        \item $a$ produces $f(a)$
+        \item $a$ receives utility $u_i(i) > 0$ after consumption. (Only consumes its own type)
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Evolution of holdings}
+
+    Decisions: Trade or Not Trade, Consume or Not Consume.
+    \begin{equation}
+        \lambda_{at} = \begin{cases}
+            1 & \text{if} \quad a \text{ wants } x_{at} \text{ for } x_{\rho_t(a)t} \\
+            0 & \text{if} \quad a \text{ refuses to trade}
+        \end{cases}
+    \end{equation}
+
+    \setcounter{equation}{2}
+
+    \begin{equation}
+        \gamma{at} = \begin{cases}
+            1 & \text{if} \quad a \text{ wants to consume } x_{at}^+ \\
+            0 & \text{if} \quad a \text{ not consume}
+        \end{cases}
+    \end{equation}
+
+    \begin{equation}
+        \label{eq:x-lom}
+        x_{a, t+1} = \gamma_{at} f(a) + (1-\gamma_{at})\left(
+            (1-\lambda_{at} \cdot \lambda_{\rho_t(a)t})x_{at} 
+            + \lambda_{at} \cdot \lambda_{\rho_t(a)t} x_{\rho_t(a)t}
+        \right)
+    \end{equation}
+
+\end{frame}

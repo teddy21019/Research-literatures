@@ -1,0 +1,91 @@
+\begin{frame}
+    \frametitle{Allowing Wealth Accumulation}
+
+    In previous baseline model, each agent returns to the unit endowment.
+    \pause
+    \vfill 
+    If we allow depositors to accumulate wealth: 
+    \begin{enumerate}
+        \item Bank reserve large, harder for bank run to occur.
+        \item Withdrawal amount increases, easier for bank run to occur.
+    \end{enumerate}
+
+    The extension checks if this scenario is possible.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modification --- Wealth}
+
+    Some agents might never withdraw in t=1
+    \begin{itemize}
+        \item Wealth follows a geometric progression growth 
+    \end{itemize}
+    \vfill 
+    \begin{itemize}
+        \item $\omega_i$ --- available wealth 
+        \item 1 unit of endowment at each t=0 
+        \item Agents allocate $\omega_i$ in asset market or deposit
+        \item \color{red}{Spends $\omega_i$ each cycle --- (Sort of) Hand to mouth setting}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Allocation decision of $\omega_i$}
+
+    Agents not clients of bank 
+    \begin{itemize}
+        \item Impatient --- Spent all in t=1. $\omega_{i, t+1}=0$
+        \item Patient --- No spending in t=1, receive $R\omega_i$ in t=2, spend $\omega_i$
+    \end{itemize}
+
+    Agents who are clients of bank
+    \begin{itemize}
+        \item Impatient --- received $r_1 \omega_i$ in t=1, spend $\omega_i$ in t=1
+        \item Patient --- No spending in t=1, receive $r_2 \omega_i$ in t=2, spend $\omega_i$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Banks' allocation}
+
+    \emph{The authors did not mentioned the modification on the formation and allocation of banks.}
+
+    The orders of offering money is the same 
+    \begin{enumerate}
+        \item Liquid assests
+        \item Reserves 
+        \item Illiquid assets
+    \end{enumerate}
+
+    If the bank has not enough to pay, some clients receive nothing, and the bank fails.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Thoughts}
+
+    \begin{itemize}[<+->]
+        \item A great start to explore dynamic bank runs.
+        \item Bank run emerges from simple imitation rule, which considers only limited knowledge from the environment(neighbors), not a global information.
+        \item Endogenously selection of becoming clients of bank.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Improvements and criticisms}
+    \pause
+    Criticisms
+    \begin{enumerate}[<+->]
+
+        \item Consumption smoothing
+        \item Expected value of a forecast not described clearly
+    \end{enumerate}
+    \vfill
+    Adjustment and Improvements
+    \begin{enumerate}
+        \item Existing large banks. Endogenous bank formation is not necessary in most applications. 
+        \item Exogenous bank-depositor network --- Spacial network is not enough.
+        \item Consumption and preference shock should be endogenous and follow a transition process.
+    \end{enumerate}
+
+\end{frame}

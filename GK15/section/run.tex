@@ -1,0 +1,123 @@
+\begin{frame}
+    \frametitle{Run}
+
+    \begin{itemize}
+        \item The entire banking system run
+        \item Same decision for all depositors
+    \end{itemize}
+    \vfill
+    Realization of $Z_t$ causes bank run. If depositors decide to run, bank liquidates all its capitals, 
+    causing price to be $Q^*$.
+    \begin{itemize}
+        \item Value of bank's asset during forced liquidation --- $(Z_t + Q^*_t)K^b_{t-1}$
+        \item Liability still $R_t D_{t-1}$
+        \item if $(Z_t + Q^*_t)K^b_{t-1}$ < $R_t D_{t-1}$ --- Net worth is wiped out.
+    \end{itemize}    
+    Condition for bank run 
+    \begin{equation}
+        x_t \equiv \frac{(Z_t + Q^*_t)K^b_{t-1}}{R_t D_{t-1}} < 1
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Recovery rate $x_t$}
+    
+    The recovery rate depends on two endogenous factors
+    \begin{itemize}
+        \item Liquidation price $Q^*_t$
+        \item Balance sheet condition
+    \end{itemize}
+    
+    \begin{align*}
+        x_t \equiv& \frac{(Z_t + Q^*_t)K^b_{t-1}}{R_t D_{t-1}} \\
+        =& \frac{Z_t + Q^*_t}{Q_{t-1}} \frac{1}{R_t} \frac{Q_{t-1}K^b_{t-1}}{D_{t-1}} \\
+        =& \frac{R^{b*}_t}{R_t} \frac{Q_{t-1}K^b_{t-1}}{D_{t-1}}\\
+        \because& Q_{t-1}K^b_{t-1} = N_{t-1} + D_{t-1} \implies \frac{D_{t-1}}{N_{t-1}} = \frac{Q_{t-1}K^b_{t-1}}{N_{t-1}} - 1 = \phi_{t-1} - 1 \\
+        =& \frac{R^{b*}_t}{R_t}\frac{\phi_{t-1}}{\phi_{t-1} - 1 } \addtocounter{equation}{1}\tag{\theequation}
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Intuition of recovery rate}
+
+    We now reduced the recovery rate into just three variables
+    \begin{equation*}
+        x_t = \frac{R^{b*}_t}{R_t}\frac{\phi_{t-1}}{\phi_{t-1} - 1 }
+    \end{equation*}
+    \vspace{2em}
+    Bank run equilibrium occurs if 
+    \begin{itemize}
+        \item Realized return on bank during liquidation $R^{b*}_t$ is too low
+        \item Leverage multiplier is too high 
+    \end{itemize}
+
+    $R^{b*}_t, R_t, \phi_t$ are all endogenous --- possibility of bank run varies with macroeconomic conditions.
+    \begin{itemize}
+        \item Equilibrium without bank run~: $R_t$ and $\phi_t$
+        \item ? Behavior of economy~: $Q^*_t$
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Liquidation Price $Q^*_t$}
+
+    If banks fully liquidate all their assets
+    \begin{enumerate}
+        \item Households hold all capitals
+        \begin{equation}
+            K^h_t = 1 \quad \text{During liquidation}
+        \end{equation}
+        \item Forward solve $Q^*_t$ from HHs' Euler equation.
+    \end{enumerate}
+
+    \framebreak 
+
+
+    From HHs' Euler eq. $E_t \Lambda{t, t+1} R^h_{t+1} = 1$ with $R^h_{t+1} = \frac{Z_{t+1} Q_{t+1}}{Q^*_t + f'(K^h_t)}$
+
+    Note that $f'(K^h_t) = \alpha K^h_t = \alpha$ during liquidation period, hence $E_t \Lambda_{t, t+1} \frac{Z_{t+1} Q_{t+1}}{Q^*_t + \alpha} = 1$. Rearranging, we get 
+
+    \begin{align*}
+        Q^*_t &= E_t[\Lambda_{t, t+1}(Z_{t+1} + Q_{t+1})] - \alpha \\
+        & = E_t (\Lambda_{t, t+1}Z_{t+1}) + E_t(\Lambda_{t, t+1}Q_{t+1}) - \alpha
+    \end{align*}
+
+
+    Note that with Euler's equation on other periods, 
+    \begin{equation*}
+        E_t (\Lambdatt{1}{2} Z_{t+2}) + E_t (\Lambdatt{1}{2}Q_{t+2}) = E_t Q_{t+1}+ E_t f'(K^h_t+1)
+    \end{equation*}
+    and
+    \begin{equation*}
+        \Lambdatt{1}{2} \Lambdatt{0}{1} = \beta \frac{C^h_t+1}{C^h_{t+2}} \beta \frac{C^h_{t}}{C^t_{t+1}} = \beta^2\frac{C^h_t}{C^h_{t+2}} = \Lambda_{t, t+2}
+    \end{equation*}
+    
+    We get
+    \
+    \begin{align*}
+        &Q^*_t = E_t (\Lambda_{t, t+1}Z_{t+1}) + E_t(\Lambda_{t, t+1}Q_{t+1}) - \alpha \\
+        &E_t(\Lambdat{1}Q_{t+1}) - E_t(\Lambdat{2}Q_{t+2}) = E_t(\Lambdat{2}Z_{t+2}) - E_t(\Lambdat{1}f'(K^h_{t+1}))\\
+        &E_t(\Lambdat{2}Q_{t+2}) - E_t(\Lambdat{3}Q_{t+3}) = E_t(\Lambdat{3}Z_{t+3}) - E_t(\Lambdat{2}f'(K^h_{t+2}))\\
+        \vdots \\
+    \end{align*}
+
+    Sum to infinite, we get 
+
+    \begin{equation}
+        Q^*_t = E_t \left[
+            \sum_{i=1}^\infty \Lambdat{i}(Z_{t+i} - \alpha K^h_{t+i}) - \alpha
+        \right]
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Policy Implications}
+
+    \begin{itemize}
+        \item Financial acceleration effect + sunspot runs both due to solvency problem.
+        \item Setting maximum leverage multiplier $\phi$, since $x_t(\phi)$ decreases with $\phi$
+        \item Lender of the last resort policies push up $Q^*_{t+1}$
+    \end{itemize}
+
+\end{frame}

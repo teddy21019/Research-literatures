@@ -1,0 +1,38 @@
+\begin{frame}
+    \frametitle{Resource}
+
+    \begin{itemize}
+        \item Fixed capital, allocated to bank and household
+        \begin{equation}
+            K^b_t + K^h_t = 1
+        \end{equation}
+        \item Payoff for banker 
+        \begin{equation}
+            \begin{array}{ccc}
+                \text{date}~t & & \text{date}~ t+1 \\
+                K^b_t & \rightarrow & \begin{cases}
+                    Z_{t+1}K^b_t \\
+                    K^b_t
+                \end{cases}        
+            \end{array}
+        \end{equation}
+    \item Payoff for HH
+        \begin{equation}
+            \begin{array}{ccc}
+                \text{date}~t & & \text{date}~ t+1 \\
+                \begin{cases}
+                    K^h_t \\
+                    f(K^h_t)
+                \end{cases} 
+                & \rightarrow & \begin{cases}
+                    Z_{t+1}K^h_t \\
+                    K^h_t
+                \end{cases}        
+            \end{array}
+        \end{equation} 
+    \item HH needs management cost 
+    \begin{equation}
+        f(K^h_t) = \frac{\alpha}{2} (K^h_t)^2
+    \end{equation}
+    \end{itemize}
+\end{frame}

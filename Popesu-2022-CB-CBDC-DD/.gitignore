@@ -1,0 +1,9 @@
+*.gz
+*.xdv
+*.aux
+*latexmk
+*.nav
+*.snm
+*.toc
+*.fls
+*.log

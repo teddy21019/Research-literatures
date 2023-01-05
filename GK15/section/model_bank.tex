@@ -1,0 +1,135 @@
+\begin{frame}
+    \frametitle{Finite expected lifetime}
+    \begin{exampleblock}{100 percent equity financing}
+        To the extent bankers may face financial market frictions, 
+        they will attempt to save their way out of the financing constraint by
+        accumulating retained earnings in order to move toward 100 percent equity financing.  
+    \end{exampleblock}
+
+    To limit this possibility --- probability $\sigma$ of surviving, 
+    hence expected lifetime $\frac{1}{1-\sigma}$ 
+    \begin{enumerate}
+        \item Meaning?
+        \item How does limited lifetime help solve this? In reality? 
+    \end{enumerate}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{The Balance Sheet}
+
+    \begin{itemize}
+        \item Net worth (Assets - liabilities) for surviving bankers
+        \begin{equation}
+            n_t = (Z_t + Q_t) k^b_{t-1} - R_{t}d_{t-1}
+        \end{equation}
+        \item Net worth for new bankers --- get initial endowment
+        \begin{equation}
+            n_t^\text{new banker} = w_b
+        \end{equation}
+        \item Exiting bankers consume all their net worth 
+        \begin{equation}
+            c^b_t = n_t
+        \end{equation}
+        \item Bank finance assets holdings with new deposit + net worth (retained earnings)
+        \begin{equation}
+            Q_t k^b_t = d_t + n_t
+        \end{equation}
+        \item Banks choose $\{d_t, k^b_t\}$ each period to maximize its franchise value.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Agency Problem}
+    \begin{itemize}
+        \item A banker could play honest --- hold depositors' asset until realization in $t+1$, and pay deposit 
+        \item Banker would also want to divert some assets for personal use
+        \item Assume can sell $\theta \in (0,1)$ of assets secretly 
+    \end{itemize}
+
+    \vfill 
+    
+    \begin{alertblock}{Risk of doing so? }
+        Depositors can force a bankruptcy in the next period. \\
+        The gain from diverting fund can not exceed the franchise value.
+    \end{alertblock}
+    That is, 
+    \begin{equation}
+        \theta Q_t k^b_t \le V_t
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Franchise Value and Incentive Constraint}
+
+    \begin{block}{Franchise Value}
+        Present discount value fo future payouts from operating honestly.
+        \begin{equation}
+            V_t = E_t [\beta(1-\sigma)n_{t+1} +\beta\sigma V_{t+1}] 
+        \end{equation} 
+        Higher franchise value reduces excessive risk taking strategy by banks (See Demsetz, Saidenberg and Strahan, 1996)       
+    \end{block}
+
+    The franchise value is constant return to scale, 
+    so the bank's optimization problem is reduced to maximizing the Tobin's Q
+    \begin{block}{Tobin's Q}
+        In this context, franchise value is its market value, 
+        and the replacement cost is defined by its net worth
+        \begin{equation*}
+            \Psi_t \equiv V_t/n_t
+        \end{equation*}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tobin's Q}
+
+    Dividing the franchise value by its net worth, we get 
+    \begin{equation*}
+        \frac{V_t}{n_t} = E_t\left[
+            \beta(1-\sigma)\frac{n_{t+1}}{n_t} +\beta\sigma \frac{V_{t+1}}{n_{t+1}}\frac{n_{t+1}}{n_t}
+            \right]
+    \end{equation*}
+    \begin{align}
+        \frac{n_{t+1}}{n_t} =& \frac{(Z_{t+1} + Q_{t+1}) k^b_{t} - R_{t+1}d_{t}}{n_t} \nonumber \\
+        =& \underbrace{\frac{Z_{t+1} + Q_{t+1}}{Q_{t}}}_{\equiv R^b_{t+1}} \underbrace{\frac{Q_t k^b_t}{n_t}}_{\phi_t} - R_{t+1} \frac{d_t}{n_t} \nonumber \\
+        =& (R^b_{t+1} - R_{t+1})\phi_t + R_{t+1}
+    \end{align}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bank's problem --- max Tobin's Q}
+    The bank's problem become choosing leverage 
+    \begin{equation}
+        \psi_t = \max_{\phi_t} \{\mu_t\phi_t + \nu_t\}
+    \end{equation}
+
+    The incentive constraint 
+    \begin{equation}
+        \theta Q_t k^b_t \le V_t \implies \theta \phi_t \le \psi_t = \mu_t\phi_t + \nu_t
+    \end{equation}
+    \begin{align}
+        \mu_t &= E_t [\beta\Omega_{t+1}(R^b_{t+1} - R_{t+1})] & \text{\tiny Excess M.V of assets over deposit}\\
+        \nu_t &= E_t [\beta\Omega_{t+1}R_{t+1}] & \text{\tiny M.C of deposit} \\
+        \Omega_{t+1} &= (1-\sigma)\times 1 + \sigma \times \psi_{t+1} & \text{\tiny M.V of net worth} \nonumber
+    \end{align}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{IC binding}
+    The IC binds when $\theta \phi_t = \psi_t = \mu_t\phi_t + \nu_t$, while $\theta_t \in (0,1)$, 
+    we must satisfy $0 < \mu_t < \theta $ and 
+    \begin{equation}
+        \phi_t = \frac{\psi_t}{\theta} = \frac{\nu_t}{\theta - \mu_t}.
+    \end{equation}
+
+    When IC is binding
+    \begin{itemize}
+        \item Portfolio size is balanced by (cost of losing) franchise value
+        \item Fluctuation in net worth induce fluctuation in bank lending
+        \item \emph{Moreover, cannot negative net worth. } Otherwise, incentive constraint that ensures the bankers will not divert is violated. How?
+    \end{itemize}
+\end{frame}

@@ -1,0 +1,117 @@
+\begin{frame}
+    \frametitle{Consumers}
+
+    Period 0~: \\
+    Endowed with 1 unit of goods. 
+    Can decide to save domestically or abroad. \\
+    \vspace{2em}
+    Period 1~: \\
+    Consumers find out whether they are patient or not.
+
+    \begin{equation}
+        U(c_1, c_2) = \begin{cases}
+            u(c_1) & \text{with prob. } \lambda \\
+            u(c_2) & \text{with prob. } 1-\lambda
+        \end{cases}
+    \end{equation}
+    If impatient, consume $c_1$ at t=1
+    \\
+    \vspace{2em}
+
+    Period 2~: \\
+    Patient consumers consumer $c_2$
+\end{frame}
+
+\begin{frame}
+    \frametitle{Techonology}
+
+    \begin{table}
+        \begin{tabular}{cccc}
+            Type & Period 0 & Period 1 & Period 2 \\
+            \hline
+            Short-term & 1 & 1 & \\
+            
+            Long-term & 1 & $l<1$ & $R>1$\\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    Directly take the result that consumers will want to save in bank(foreign or domestic) to pool the risk.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Domestic Commercial Banks}
+
+    \begin{itemize}
+        \item Domestic Commercial Banks (DB) offers a demand deposit contract $(c_1, c_2)$. 
+        \item DB decide to invest $y\in(0,1)$ in the short-term technology.
+    \end{itemize}
+
+    \begin{block}{Sequential Service Constraint}
+        DB pays $c_1$ to depositors until all resources are exhausted.        
+    \end{block}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{DB's problem}
+
+    \begin{equation}
+        \max_{c_1, c_2, y, {\color{red} l} \in \mathbb{R}^3_+} 
+        \lambda u(c_1) + (1-\lambda)u(c_2)
+    \end{equation}
+
+    s.t. 
+    \begin{subequations}
+        \begin{align}
+            0 &\le y \le 1 \label{eq:3a} \\
+            \lambda c_1 &\le ry + (1-y)l \label{eq:3b} \\
+            (1-\lambda) c_2 &\le R{\color{red} (1-l)}(1-y) + ry + (1-y)l - \lambda c_1 \label{eq:3c} \\
+            c_1 &\le c_2 \label{eq:3d}
+        \end{align} \label{eq:db-constraint}
+    \end{subequations}
+    \begin{alertblock}{Abuse of notation}
+        Previously denote $l$ as liquidation price, but now denote $l$ as the proportion of long-term used for early liquidation.        
+    \end{alertblock}
+
+    \framebreak 
+
+    Key intuitions 
+    \begin{itemize}
+        \item Assume bankers are Bertrand competition $\implies$ forced to maximize E.U of consumers 
+        \item~\ref{eq:3b} --- might use liquidated long-term to pay $c_1$
+        \item~\ref{eq:3c} --- Non-liquidated long-term plus after return is yield plus the leftover from period 1
+        \item~\ref{eq:3d} --- Incentive compatibility constraint, patient consumers don't pretend to be impatient
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Foreign CBDC-issuing Central Bank}
+
+    \begin{itemize}
+        \item Assume perfect credible, i.e.\ no runs
+        \item Justification: Fernandez-Villaverden et al. (2021) point out, certain punishment (for early withdrawal) and treatment (with patient depositors) ensures no run on CB is a DSE
+        \item Foreign CBDCs are open to foreigners
+        \item Constract --- $(c^*_1, c^*_2)\in \mathbb{R}^2_+$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Consumers' Problem}
+
+    Consumer invest in the highest ex-ante utility
+    \begin{enumerate}
+        \item Pick the contract, denote $d_i\in\{0,1\}$. $d_1=0$ means save in domestic.
+        \item If utility ties, fraction $f\in[0,1]$ of consumers pick the foreign contract
+    \end{enumerate}
+
+    Consumers also decide when to withdraw their funds, denote $w_i\in \{1,2\}$. Note that $w_i=w_i (w_{-i})$
+    \vfill
+    Capital account constraint --- Total investment in foreign asset must not exceed $k$
+    \begin{itemize}
+        \item Exogenous ceiling
+        \item Regulation restriction
+    \end{itemize}
+\end{frame}

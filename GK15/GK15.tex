@@ -1,0 +1,41 @@
+\documentclass[mathserif]{beamer}
+\usepackage[nofirafonts]{beamerthemefocus}
+\usepackage{amsmath}
+
+
+\newcommand{\refeq}[1]{Eq.~\ref{#1}}
+\newcommand{\Lambdatt}[2]{\Lambda_{t+ #1, t+ #2}}
+\newcommand{\Lambdat}[1]{\Lambda_{t, t+#1}}
+\setbeamertemplate{caption}[numbered]
+
+\title{Banking, Liquidity and Bank Runs in an Infinite Horizon Economy}
+\author{Mark Gertler and Nobuhiro Kiyotaki \\ 
+\small Presentor ~:~ Chia-Wei, Chen}
+
+\begin{document}
+    \begin{frame}
+        
+        \maketitle
+    \end{frame}
+
+    \section{Introduction}
+    \input{section/intro.tex}
+
+    \section{Model---Main Structure}
+    \input{section/model_main.tex}
+
+    \section{Household}
+    \input{section/model_HH.tex}
+
+    \section{Bank}
+    \input{section/model_bank.tex}
+
+    \section{Aggregation and Equilibrium without Runs}
+    \input{section/agg.tex}
+
+    \section{Bank run}
+    \input{section/run.tex}
+
+    \section{Results}
+    \input{section/results.tex}
+\end{document}

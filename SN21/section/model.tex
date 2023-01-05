@@ -1,0 +1,306 @@
+\begin{frame}
+    \frametitle{Timeline in one cycle}
+    \small
+    \begin{columns}[t]
+        \begin{column}{0.33\textwidth}
+            Subperiod 0 
+            \rule{\textwidth}{1pt}
+            Agent draw random preference $U_i \sim [0,1]$
+            
+            \vspace{1em}
+            Agent endowed with 1
+
+            \vspace{1em}
+            $\bar{U}_i<0.5$ - Impatient, invest in liquid asset  
+    
+            \vspace{1em}
+            $\bar{U}_i>0.5$ - Patient, invest in illiquid asset
+           
+            \vspace{1em}
+            Alternatively - Become depositor
+        \end{column}
+
+        \begin{column}{0.33\textwidth}
+            Subperiod 1 
+            \rule{\textwidth}{1pt}
+            Liquidity shock
+
+            $\rho_{i} = \bar{U}_i + (-1)^{b_i}\frac{\epsilon_i}{2}$
+            
+            \vspace{1em}
+            Nondepositor - Search to trade asset. 
+            
+            \vspace{1em}
+            Depositors - Choose to withdraw $r_1$ or not
+            
+            \vspace{2em}
+            Liquid asset - Repay 1, Illiquid asset - Repay $r$
+            
+            \vspace{1em}
+            Bank - Face withdrawal, decide to default
+        \end{column}
+
+        \begin{column}{0.33\textwidth}
+            Subperiod 2 
+            \rule{\textwidth}{1pt}
+            Holding illiquid asset - Receive $R$
+            
+            \vspace{2em}
+            Depositors - Receive $r_2$
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Preference Shock}
+    There is an initial preference shock at t=0 (subperiod is denoted as t)
+    \begin{equation*}
+        U_i \sim \operatorname{Unif}[0,1]
+    \end{equation*}
+
+    Denote its realization as $\bar{U}_i$
+    
+    A new preference shock in t=1 
+    \begin{equation*}
+        \rho_{i} = \bar{U}_i + (-1)^{b_i}\frac{\epsilon_i}{2}
+    \end{equation*}
+    $b_i \sim \operatorname{Bernoulli}(0.5)$,  $\epsilon_i\sim \operatorname{Unif}[0,1]$
+
+    For both $U$ and $\rho$, $>0.5$ represents patient, vise versa.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Rate of return}
+    \begin{table}
+        \centering
+
+        \begin{tabular}[h]{r c c}
+            Type & t=1 & t=2 \\
+            \hline 
+            Liquid Asset & $1$ & \\
+            Illiquid Asset & $r$ & $R$ \\
+            Deposit & $r_1$ & $r_2$ \\
+            \hline            
+        \end{tabular}
+    \end{table}
+
+    \begin{equation*}
+        r<1<r_1<r_2<R
+    \end{equation*}
+    The rate of returns are publicly known to everybody.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bargain}
+    Bargain happens between asset holders that have inconsistent intertemporal preference. 
+    \begin{itemize}
+        \item Impatient in t=0, patient in t=1 (Positive preference shock)
+        \item Patient in t=0, impatient in t=1 (Negative preference shock)
+    \end{itemize}
+    \vfill
+    Might not find a partner in his social network $v$. The Moore neighborhood in this case.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Becoming a bank}
+
+    \begin{itemize}
+        \item Decision is made in t=0, depending on the impatient agents in his social network $v$.
+        \item Unknown proportion of impatient agents $w \in \{0, \frac{1}{9}, \dots,  1\}$
+    \end{itemize}
+
+    Become a banker if per capita present value must provide is less than endowment:
+    \begin{equation*}
+        f(w_i) = w_i r_1 + (1-w_i)\frac{r_2}{R} \le 1
+    \end{equation*}
+    or
+    \begin{equation*}
+        w_i \le \frac{R-r_2}{R r_1 - r_2}
+    \end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Not honoring / discouraging of creation}
+
+    For each value $Q \in (1, r_1)$, there exist $\omega \in [w^*, 1]$ such that $f(\omega)=Q$.
+    Where $f(w^*) = 1$. 
+    \\[2em]
+    There are realizations of $w$ that discourage the creating or incentive to default.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Investment decision of Bank}
+
+    Within the per capita present value the bank must provide
+    \begin{equation*}
+        f(w_i) = w_i r_1 + (1-w_i)\frac{r_2}{R}
+    \end{equation*}
+    
+    \begin{itemize}
+        \item $x_i = (1-w_i)\frac{r_2}{R}$ - Investment in illiquid assets.
+        \item $y_i = w_i r_1$ - Investment in liquid assets.
+        \item $1 - x_i - y_i$ - Added to reserve
+    \end{itemize}
+    \pause
+    Intuition 
+    \\[1em]
+    The bank ensures $y_i=w_i r_1$ of liquid assets to provide withdrawal in first period, 
+    and ensures $R x_i = (1-w_i)r_2$ of illiquid assets to provide withdrawal in the second period.
+    The rest are kep as reserves.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Opening a bank account}
+    \begin{block}{Becoming a client}
+        $T(v, pyf):$ If the agent evaluates that it is advantageous,
+        he opens an account in a bank in the immediate neighborhood; 
+        if there is none in this condition, he becomes a client of the same bank of one of his neighbors. 
+    \end{block}
+    \begin{itemize}
+        \item $v$ --- Agent's social network
+        \item $pyf$ --- Result of the comparison of payoffs.
+    \end{itemize}
+
+    $pyf$ is determined by a learning rule.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Decision of becoming a client}
+
+    \begin{itemize}
+        \item Follows Grasselli and Ismail (2013)
+        \item Agents have memory of 5 cycles.
+        \item Memory information has three states.
+        \begin{itemize}
+            \item[N] --- If the \emph{budget constraint} remains unchanged after the shock 
+            \item[B] --- There was a change but no partner was found.
+            \item[G] --- There was a change and someone to bargain with was found
+        \end{itemize}
+        \item Total of 7 predictors
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Predictors I}
+    \begin{enumerate}
+        \item k will be the same as k-1
+        \item k will be the same as t-2
+        \item ... t-3
+        \item ... t-4
+        \item ... t-5
+        \item k will be equal to mode of last 3 previous cycle
+        \item k will be equal to mode of last 5 previous cycle
+    \end{enumerate}
+
+    Each predictor maps to a forecast of one of the 3 states, 
+    (I) denote $\Theta = [\theta_1, \theta_2, \dots, \theta_7]$, where $\theta_i \in \{N,B,G\}$
+\end{frame}
+
+\begin{frame}
+
+    \begin{quote}
+        In the decision to become a bank customer, the agent can map the return of each predictor to a situation
+        in which he deposits or not his cash in bank, obtaining, respectively, the vectors $\underset{1\times 7}{\Pi_d}$ and $\Pi_n$
+    \end{quote}
+
+    \pause
+
+    \begin{alertblock}{How is the return calculated?}
+        Note that $\bar{U}_i$ is initialized during decision
+        \begin{enumerate}
+            \item Do agents have to consider the probability of being patient when deposit??
+            \item Will all elements of $\Pi_d$ be the same?
+            \item Do agents consider present value on t=1?
+        \end{enumerate}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Desision of Becoming a Client (Con'd)}
+    Decision 
+
+    \begin{equation*}
+        A^* = \argmax_{A\in\{d, n\}}  \Pi_A \cdot \Phi
+    \end{equation*}
+    $\underset{1 \times 7}{\Phi}$ is the weight, called ``force'', of the predictor vectors.
+    \vfill
+    That is, the agent decides to become a client of its neighbor's bank, or the same as his neighbor, if $\Pi_d \cdot \Phi > \Pi_n \cdot \Phi$
+
+    \vfill
+    
+    The bank is chosen as its neighbor's bank.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Law of Motion for the Weight}
+
+    For each of the predictor, $+1$ to the corresponding weight if correctly forecasted, and $-1$ if the not.
+
+    \begin{equation*}
+        \phi_{j, t+1} = (-1)^{\I{\theta_{j,t}=\hat{\theta}_t}} + \phi_{j, t}
+    \end{equation*}
+    
+    Where $\hat{\theta}_t \in \{N,B,G\}$ is the true realization state at time t. 
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Withdrawal}
+
+    \pause
+    \begin{block}{Sequential service constraint}
+        Closer clients withdraw first. \\ 
+        Random assign as the tie-breaking rule.
+    \end{block}
+    \pause
+    \vfill
+    Withdrawal period (normal case)
+    \begin{enumerate}
+        \item Impatient depositors ($\rho < 0.5$) --- withdraw at t=1, get $r_1$
+        \item Patient depositors ($\rho < 0.5$) --- withdraw at t=2, get $r_2$
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Imitation Rule}
+    The key of bank run is the allowance of patient clients to imitate the decision of neighbors (in its social network)
+
+    \begin{block}{Imitation Rule}
+        If $\rho>\frac{1}{2}$ but more than $n$ neighbors in his social network $v$ intend to withdraw in now (t=1), then the agent withdraws.
+    \end{block}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bank's Behavior}
+    The bank pays $r_1$ in t=1, and pays $r_2$ in t=2, the rest is saved as reserves.
+    \vfill
+    The expected proportion of impatient agents in the next cycle follows an adaptive rule 
+    \begin{equation*}
+        w^k_i = w^{k-1}_i + \alpha (\bar{w}_i - w^{k-1}_i)
+    \end{equation*}
+    Where $\bar{w}_i$ is the actual proportion of impatient clients.
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fail of a Bank}
+    As mentioned before, closest bank clients withdraw first.
+
+    \begin{block}{Order of assests used to pay}
+        \begin{enumerate}
+            \item Liquid assets
+            \item Reserve 
+            \item Illiquid assets
+        \end{enumerate}
+    \end{block}
+
+    If the bank exhausts all its resources, the remaining clients receive nothing and they break link with the bank.
+
+    \begin{block}{Fail}
+        \# of clients $\le 5$, it fails. The remain clients are released.
+    \end{block}
+
+\end{frame}

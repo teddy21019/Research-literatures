@@ -1,0 +1,61 @@
+\begin{frame}
+    \frametitle{Household Saving}
+
+    \begin{itemize}
+        \item HH holds nondurable goods $Z_t W^h$ each period.
+        \item HH deposits their funds to (shadow) banks 
+        \begin{equation}
+            R_{t+1} = \begin{cases}
+                \bar{R}_{t+1} & \text{if no bank run} \\
+                x_{t+1}\bar{R}_{t+1} & \text{if bank run}
+            \end{cases}
+        \end{equation}
+        all HH is distributed equal amount, unlike DD.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Household decision}
+    \begin{itemize}
+        \item HH maximizes lifetime utility 
+        \begin{equation*}
+            U_t = E_t \left(\sum_{i=0}^\infty \beta^{i} \ln{C^h_{t+i}}\right)
+        \end{equation*}
+        \item s.t 
+        \begin{equation}
+            C^h_t + D_t + Q_t K^h_t + f(K^h_t) = Z_t W^h +  R_t D_{t-1} + (Z_t + Q_t)K^h_{t-1}
+        \end{equation}
+        \framebreak
+        \item (Assuming 0 prob of bank run) F.O.C for deposit
+        \begin{equation}
+            \label{eq:FOC-deposit}
+            E_t \Lambda_{t, t+1}R_{t+1} = 1
+        \end{equation}
+        \item $\Lambda_{t, t+i}$ is defined by 
+        \begin{equation}
+            \label{eq:lambda}
+            \Lambda_{t, t+i} = \beta^i \frac{C^h_t}{C^h_{t+i}}
+        \end{equation}
+        \item F.O.C for holding capital 
+        \begin{equation}
+            \label{eq:FOC-capital}
+            E_t \Lambda_{t, t+1}R^h_{t+1} = 1
+        \end{equation}
+        with 
+        \begin{equation}
+            \label{eq:Rh}
+            R^h_{t+1} = \frac{Z_{t+1} + Q_{t+1}}{Q_t + f'(K^h_t)}
+        \end{equation}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    
+    Remark
+    \begin{itemize}
+        \item If HH hold capital, \refeq{eq:FOC-capital} help determine market price. 
+        \item i.e.,  Liquidation price during run. 
+        \item $Q_t = E_t \Lambda_{t, t+1}(Z_{t+1} + Q_{t+1}) - f'(K^h_t)$. Market price {\bf tends to} be decreasing as $K^h_t$ increase.
+        \item During bank run, HH absorbs all capital from bank, asset prices drop sharply. 
+    \end{itemize}
+\end{frame}
