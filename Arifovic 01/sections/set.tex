@@ -1,0 +1,165 @@
+\begin{frame}
+    \frametitle{Model Setting and Background}
+    Consider a open economy with 
+    \begin{itemize}
+        \item Two fiat currency
+        \item Flexible exchange rate
+        \item Perfect Substitution
+    \end{itemize}
+
+    \vfill 
+
+    Also, the economy has 
+
+    \begin{itemize}
+        \item No government intervention
+        \item No restriction on holding
+    \end{itemize}
+
+    \vfill
+
+    How is the exchange rate and inflation rate determined?
+    
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Kareken-Wallace Model (1981)}
+    \begin{itemize}
+        \item Overlapping generation model (OG)
+        \item Same property in previous slide
+        \item Agent \emph{save} through holding fiat money
+    \end{itemize}
+
+    \begin{equation*}
+        \begin{aligned}
+            \max \quad & \ln c_t(t) + \ln c_t(t+1) \\
+            s.t. \quad c_t(t) \le& w^1 - \frac{m_1(t)}{p_1(t)}- \frac{m_2(t)}{p_2(t)} \\ 
+            c_t(t+1) \le& w^2 + \frac{m_1(t)}{p_1(t+1)}+ \frac{m_2(t)}{p_2(t+1)}
+        \end{aligned}
+    \end{equation*}
+
+    \begin{itemize}
+        \item $c_t(t+1)$ --- Born at $t$, consumption at $t+1$
+        \item $w^1(w^2)$ --- Endowment when young (old)
+        \item $m_1(t)$ --- Holding of currency 1 at $t$
+        \item $p_1(t)$ --- Price of good in currency 1 at $t$
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Results of the KW model}
+    \begin{enumerate}
+        \item No specific exchange rate and price (nondeterministic)
+        \item Equal return in money during equilibrium (no arbitrage)
+        \item Two stationary inflation rate $\pi \equiv \frac{p_i(t+1)}{p_i(t)} \quad \forall i$
+        \begin{itemize}
+            \item High inflation~: Stable
+            \item Low inflation~: Unstable
+        \end{itemize}
+        \item Also a set of one-currency equilibrium. Remains to have two inflation rate.
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Solving the Model}
+    \begin{itemize}
+        \item Since no uncertainty, an equilibrium condition 
+        \begin{equation*}
+            R(t) = \frac{p_1(t)}{p_1(t+1)} =  \frac{p_2(t)}{p_2(t+1)}, \quad t \ge 1
+        \end{equation*}
+
+        \item Define exchange rate $e(t) \equiv \frac{p_1(t)}{p_2(t)}$, we also have 
+        \begin{equation*}
+            e(t+1) = e(t) = e , \quad t\ge 1
+        \end{equation*}
+
+        \item The agent's maximization problem yields 
+        \begin{equation*}
+            s(t) = \frac{m_1(t)}{p_1(t)} + \frac{m_2(t)}{p_2(t)} 
+            = \frac{1}{2} \left[w^1 - w^2 \frac{1}{R(t)}\right]
+        \end{equation*}
+
+        \item Aggregate savings in the world
+        \begin{equation*}
+            S(t) = N \left[w^1 - w^2 \frac{1}{R(t)}\right] 
+            = \frac{H_1(t)}{p_1(t)} + \frac{H_2(t)}{p_2(t)} 
+        \end{equation*}
+        where $H_i(t)$ is the nominal supply of currency $i$ at time $t$
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Government Consumption}
+
+    Government $i$ finances purchases by issuing currency $i$
+
+    \begin{equation*}
+        G_i = \frac{H_i(t) - H_i(t-1)}{p_i(t)}
+    \end{equation*}
+
+    i.e.~finance via seignorage. 
+    \vfill 
+    World government consumption can be derived
+    \begin{equation*}
+        G_1 + G_2 = S(t) - S(t-1)R(t-1)
+    \end{equation*}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exchange Rate is Indeterminate}
+    Since what matters is real saving $s(t)$, or in aggregate form $S(t)$
+    \begin{equation*}
+        S(0) = \frac{H_1(0) + H_2(0)e}{p_1(1)} = \frac{H_1(0) + H_2(0)\hat{e}}{\hat{p}_1(1)}
+    \end{equation*}
+    And 
+    \begin{equation*}
+        G_w = G_1 + G_2 = S(1)  - S(0)
+    \end{equation*}
+    Together 
+    \begin{equation*}
+        \frac{H_1(0) + H_2(0)\hat{e}}{\hat{p}_1(1)} = S(1) - [G_1 + G_2]
+    \end{equation*}
+    The values of $\hat{p}_2$ can be selected to solve any pair of $\hat{e}, \hat{p}_1(1)$ 
+    that keeps the aggregate saving unaltered. 
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Inflation rate}
+    Aggregate government consumption + equilibrium aggregate saving : 
+    \begin{equation*}
+        \frac{1}{R(t+1)} = \pi_w(t+1) = \frac{w^1}{w^2} + 1 - \frac{G_w}{2Nw^2} - \frac{w^1}{w^2} \frac{1}{\pi_w(t)}
+    \end{equation*}
+    \begin{itemize}
+        \item Stationary inflation rate comes in quadratic form
+        \item High inflation rate is the \textbf{stable equilibrium}
+        \item Low inflation rate is the \textbf{unstable equilibrium}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Breaking down of Currency System}
+
+    \begin{itemize}
+        \item Another equilibria --- single currency scheme
+        \item One currency is not valued $1/p_i(t) = 0$
+        \item Again two stationary equilibria, high and low inflation
+        \item Price level constant if supply of money constant
+    \end{itemize}
+
+
+    \vfill
+    In perfect foresight, if $G_1 = 0, G_2 > 0$
+    \begin{itemize}
+        \item Growth of wolrd money supply = Growth of currency 2
+        \item As $t \to \infty$, currency 2 drive currency 1 out of agent.
+        \item Currency of country with restrictive monetary policy cannot survive???
+        \item ACE dynamics presents different result.
+    \end{itemize}
+\end{frame}
