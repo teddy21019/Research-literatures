@@ -1,0 +1,108 @@
+\section{Consumption decision}
+
+\begin{frame}
+    \frametitle{Critical feature}
+
+    Reminder : The design must be able to easily extendable to implement:
+    \begin{enumerate}
+        \item Learning from buyers/ sellers 
+        \item Use multiple means of payments
+    \end{enumerate}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{General rule -- MABM approach to consumption/saving decisions}
+
+    \begin{itemize}
+        \item Two-stage procedure
+        \begin{enumerate}
+            \item Consumption budget
+            \item consumption bundle
+        \end{enumerate}
+        \item Agents don't follow explicit optimization procedure (Usually adaptive)
+        \item General behavior rule 
+        \begin{equation*}
+            C_{h,t} = c_H W^H_{h,t} + c_F W^F_{h,t}
+        \end{equation*}
+        $W^H$: Human capital, $W^F$: Financial wealth
+        \item Transition function 
+        \begin{align*}
+            W^F_{h,t} &= R W^F_{h, t-1} + Y_{h, t} - C_{h, t} \\
+            S_{h,t} &= W^F_{h,t} - W^F_{h, t-1}
+        \end{align*}
+    \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Specification for each MAMB}
+
+    \begin{itemize}
+        \item<1-> \textbf{AGH:} 
+        \begin{itemize}
+            \item $c_H = c_F = c$
+            \item $W^H_{h,t} = k^H Y^P_{h,t}$ depends on permanent income 
+            \item $(Y^P_{h,t} - Y^P_{h,t-1}) = (1 - \xi) (Y_{h, t-1} - Y^P_{h,t-1})$, updates adaptively
+            \item Consumption is thus a linear function of past incomes and wealth  
+        \end{itemize}
+        \item<2-> \textbf{CATS/ADG}
+        \begin{itemize}
+            \item $W^H_{h,t} = \xi W^H_{h, t-1} + (1-\xi) Y^H_{h,t} $
+            \item Human capital is a weighted average of current and past income. 
+            \item Assuming no memory ($\xi = 0$), human capital = current income: $C_{h,t} = c_y Y_{h,t} + c_F W^F_{h,t}$
+        \end{itemize}
+        \item<3-> \textbf{KS} : $C_{h,t} = c_y Y_{h,t}$
+        \item<4-> \textbf{LAGOM}: $C_{h,t} = c_F \frac{M_{h,t}}{P_t}$. Depends on wealth (money holding)
+        \item<5-> \textbf{EUBI/EUGE}
+        \begin{itemize}
+            \item $ S_{h,t} = v(\omega^F Y_{h,t} - W^F_{h,t}) $, targets a wealth.
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Design of consumption}
+
+    \begin{itemize}
+        \item Designed to match stylized fact (ex: consumption smoothing, precautionary saving, ...).
+        \item Important when exploring business cycle
+        \item Not so important when social interaction is focused. (Is it?)
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Consumption bundling}
+
+    \begin{itemize}
+        \item<+-> \textbf{LEN} Random select from own network (changeable)
+        \item<+-> \textbf{AGH} Rational optimization procedure: 
+        \begin{equation*}
+            \max U(C_{1ht}, C_{2ht}) \qquad p_1 C_1 + p_2 C_2 = C_h
+        \end{equation*}
+        Too rational in decision 
+        \item<+-> \textbf{CATS/LAGOM} Search and matching mechanism
+        \begin{enumerate}
+            \item Choose firm by random
+            \item Rank according to price 
+            \item Accumulate consumption in ascending price order 
+            \item Involuntary saving if can't spend all 
+        \end{enumerate}
+        \item<+-> \textbf{EUBI/EUGE}
+        \begin{enumerate}
+            \item Consumers receive information of product within range
+            \item Chance of buying
+            \begin{equation*}
+                P[h \text{ select good }i] = \frac{\exp(-\gamma \log P_{i,t})}{\sum_j \exp(-\gamma \log P_{j,t})}
+            \end{equation*}
+            Multinomial logit model
+        \end{enumerate}
+    \end{itemize}
+
+
+    
+
+\end{frame}
