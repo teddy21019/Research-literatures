@@ -1,0 +1,127 @@
+\begin{frame}
+    \frametitle{Agent-Based Model}
+
+    \begin{itemize}
+        \item 2 Populations
+        \item Agents have rule, represented by \textbf{string}.
+        \item Make decision @young, evaluate payoff @old
+        \item Pass rule to next generation via genetic 
+    \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Genes}
+
+    \begin{equation*}
+        \begin{array}{ccc}
+            \overbrace{1001 \dots}^{k:\quad\text{consumption}} &\text{string}& \overbrace{0110 \dots}^{30-k:\quad\text{fraction}} \\
+            \Big\downarrow &\text{encode}& \Big\downarrow \\
+            c_{it}{t} & & \lambda_{i}(t)
+        \end{array}
+    \end{equation*}
+
+    $c_{it}(t) \implies s_i(t) \implies \begin{cases}
+        s_i(t) \lambda_{i}(t) \quad &\text{In currency 1} \\
+        s_i(t) (1-\lambda_{i}(t)) \quad &\text{In currency 2} 
+    \end{cases}$
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Price of currency}
+    Once the demand for currency is determined, the price is thus determined 
+
+    \begin{equation*}
+        H(t) = \sum_{i=1}^{N} \lambda_i{t} s_i(t) p(t)
+    \end{equation*}
+
+    Together with $G_i = \frac{H_i(t) - H_i(t-1)}{p_i(t)}$ we get 
+
+    \begin{align*}
+        p_1(t) &= \frac{H_1(t-1)}{\sum_i^N \lambda_i(t)s_i(t) - G_1} \\
+        p_2(t) &= \frac{H_2(t-1)}{\sum_i^N (1-\lambda_i(t))s_i(t) - G_2}
+    \end{align*}
+    
+    \framebreak
+
+    If the holding of currency $i$ does not exceed the level of defict $G_i$, 
+    currency $i$ becomes valueless. 
+    \begin{itemize}
+        \item Reduced to single-currency economy
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Next period consumption}
+
+    For agents born at $t-1$, once price at $t$ is set 
+    (Determined by agents born at $t$ with their portfolio decision)
+    they can determine their consumption in $t$ ~: $c_{it-1}(t)$
+
+    \begin{equation*}
+        c_{it-1}(t) = w^2 + s_i(t-1)\bar{R}_i(t-1)
+    \end{equation*}
+    where
+    \begin{equation*}
+        \bar{R}_i(t-1) = \lambda_i(t-1) 
+        \underbrace{\frac{p_1(t-1)}{p_1(t)}}_{R_1(t-1)} + 
+        (1-\lambda_i(t-1)) 
+        \underbrace{\frac{p_2(t-1)}{p_2(t)}}_{R_2(t-1)}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Lifetime Payoff (Fitness)}
+
+    Before dying, agents in  generation $t-1$ recap their life and evaluate their lifetime utility, or \emph{fitness} 
+
+    \begin{equation*}
+        \mu_{it-1} = \ln c_{it-1}(t-1) + \ln c_{it-1}(t) 
+    \end{equation*}
+
+    \vfill
+    
+    The information is then used to pass on to $t+1$ generation newborns. 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Genetic Algorithm(GA)}
+    \begin{enumerate}
+        \item Reproduction --- Tournament with replacement, select higher fitness
+        \item Crossover --- Agents in mating pool exchange genes with probability $p_{cross}$
+        \item Mutation --- A possibility $p_{mut}$ for one of the position in string to mutate
+        \item Election --- Compare potential fitness of offspring and actual fitness with parents. Highest two survives. 
+        \item New generation $t+1$ form, repeat. 
+    \end{enumerate}
+
+    \vfill 
+
+    See handout note.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Experiment}
+
+    \begin{itemize}
+        \item 9 pairs of $\{G_1, G_2\} = \{0, G_2 \}$
+        \item 2 pairs of endowment$\{w^1, w^2\}$ 
+        \item 2 pairs of GA parameters $\{p_{cross}, p_{mut}\}$
+        \item 5 random seed for each cartesian tuple 
+    \end{itemize}
+    
+    \begin{table}
+        \begin{tabular}{ccccc||ccc||ccc}
+            $G_1$ & 0 & 0 & $\dots$ & 0 & $w^1$ & 10 & 10 & $p_{cross}$ & 0.6 & 0.6 \\
+            $G_2$ & 0.6 & 1.5 & $\dots$ & 30 & $w^2$ & 4 & 1 & $p_{mut}$ & 0.0033 & 0.033 \\
+        \end{tabular}
+    \end{table}
+
+    A total of 180 simulations with $N=30$
+    
+
+\end{frame}
+
