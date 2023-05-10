@@ -1,0 +1,37 @@
+\documentclass[mathserif]{beamer}
+\usepackage[nofirafonts]{beamerthemefocus}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{natbib}
+
+\usepackage{xeCJK}
+\setCJKmainfont{Iansui094-Regular}
+
+\title{
+    中國債務陷阱 -- 新資料與新發現
+}
+\author{\small 陳家威}
+
+\begin{document}
+
+    \begin{frame}
+        \maketitle
+    \end{frame}
+
+    \section{文獻介紹}
+    \input{section/lit_source.tex}
+
+    \section{中國海外借款}
+    \input{section/oversea_lending.tex}
+
+    \section{隱匿債務}
+    \input{section/hidden.tex}
+
+    \begin{frame}[allowframebreaks]
+            \frametitle{References}
+            \bibliographystyle{econ}
+            \bibliography{bib/ref}
+    \end{frame}
+
+
+\end{document}

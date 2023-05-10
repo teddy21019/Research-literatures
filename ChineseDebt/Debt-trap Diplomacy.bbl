@@ -1,0 +1,31 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  This bbl file is created by econ.bst ver.3.1.1
+%  The latest econ.bst is available at
+%  <https://github.com/ShiroTakeda/econ-bst>
+
+%%% Definition of \bysame
+\ifx\undefined\bysame
+\newcommand{\bysame}{\hskip.3em \leavevmode\rule[.5ex]{3em}{.3pt}\hskip0.5em}
+\fi
+
+\begin{thebibliography}{xxx}
+
+\harvarditem[Bahaj and Reis]{Bahaj and Reis}{2020}{Bahaj-Saleem}
+Bahaj, Saleem and Ricardo Reis (2020) ``{Jumpstarting an International
+  Currency},'' CEPR Discussion Papers 14793, C.E.P.R. Discussion Papers,
+  \url{https://ideas.repec.org/p/cpr/ceprdp/14793.html}.
+
+\harvarditem[Horn et~al.]{Horn, Parks, Reinhart and Trebesch}{2023}{HPRT-23}
+Horn, Sebastian, Bradley~C Parks, Carmen~M Reinhart, and Christoph Trebesch
+  (2023) ``China as an International Lender of Last Resort,'' Working Paper
+  31105, National Bureau of Economic Research,
+  \href{http://dx.doi.org/10.3386/w31105}{\urlstyle{rm}
+  \nolinkurl{10.3386/w31105}}.
+
+\harvarditem[Horn et~al.]{Horn, Reinhart and
+  Trebesch}{2021}{Horn-Reinhart-Trebesch-21}
+Horn, Sebastian, Carmen~M. Reinhart, and Christoph Trebesch (2021) ``China's
+  overseas lending,'' \textit{Journal of International Economics}, 133,
+  103539.
+
+\end{thebibliography}

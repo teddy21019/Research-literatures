@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Debt-trap Diplomacy.aux
+Reallocating 'name_of_file' (item size: 1) to 5 items.
+The style file: econ.bst
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: bib/ref.bib
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+You've used 3 entries,
+            6826 wiz_defined-function locations,
+            1319 strings with 10295 characters,
+and the built_in function-call counts, 4053 in all, are:
+= -- 705
+> -- 190
+< -- 9
++ -- 61
+- -- 76
+* -- 236
+:= -- 521
+add.period$ -- 3
+call.type$ -- 3
+change.case$ -- 23
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 92
+empty$ -- 151
+format.name$ -- 62
+if$ -- 1086
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 22
+num.names$ -- 29
+pop$ -- 36
+preamble$ -- 1
+purify$ -- 23
+quote$ -- 0
+skip$ -- 301
+stack$ -- 0
+substring$ -- 253
+swap$ -- 15
+text.length$ -- 19
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 52
+warning$ -- 0
+while$ -- 21
+width$ -- 0
+write$ -- 57
